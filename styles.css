@@ -205,7 +205,7 @@
             }
         
         .post-footer-item:not(:last-child)::after {
-            height: 45%;
+            height: 140%;
         }
 
          }
