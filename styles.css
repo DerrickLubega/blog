@@ -1,0 +1,212 @@
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-image: url(bg.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 1rem;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: blue;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Blog posts container */
+        .blog-posts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            max-width: 1200px;
+            align-items: center;
+        }
+
+        /* post card */
+        .post-card {
+            background-color: white;
+            border-radius: 22px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100%; 
+            max-width: 350px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .post-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .post-content {
+            padding: 1.5rem;
+        }
+
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .post-date {
+            padding: 0.3rem 6.8rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .a {
+            color: pink;
+        }
+
+        .b { 
+            color: #ffd6a5;
+        }
+
+        .c {
+            color:#caffbf;
+
+        }
+
+ 
+        .post-category {
+            color: #6c757d;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .post-title {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+            line-height: 1.3;
+        }
+
+        .post-description {
+            color: #6c757d;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .post-footer {
+            display: flex;
+            padding: 1rem 0;
+            font-size: 0.85rem;
+            gap: 0;
+        }
+        
+        .post-footer-item {
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+            justify-content: center;
+            gap: 0.2rem;
+            padding: 0.8rem 0.5rem;
+            border-radius: 12px;
+            position: relative;
+            flex: 1;
+            text-align: center;
+            min-height: 70px;
+            min-width: 0;      
+            }
+            
+
+        /* BlacksSeparator lines between items*/
+            .post-footer-item:not(:last-child)::after{
+                content: "";
+                position:absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                height: 140%;
+                width: 1px;
+                background-color: black;
+                display: block;
+            }
+        
+        /* Different footer colors for each card */
+        .post-card:nth-child(1) .post-footer {
+            background-color: #ffc8dd; /* Pink */
+        }
+
+        .post-card:nth-child(2) .post-footer {
+            background-color: #ffd6a5; /* Orange */
+        }
+
+        .post-card:nth-child(3) .post-footer {
+            background-color: #caffbf; /* Green */
+        }
+
+        /* Responsive design */
+        @media (min-width: 768px) {
+            .blog-posts {
+                flex-direction: row;
+            }
+            
+            .post-card {
+                flex: 1;
+                min-width: 300px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            body {
+                background-attachment: scroll;
+            }
+
+            .blog-posts {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .post-card {
+                max-width: 100%;
+            }
+
+            .post-footer-item{
+                min-height: 65px;
+                padding: 0.6rem 0.4rem;
+            }
+
+            .post-footer-item:not(:last-child)::after{
+                height: 50%;
+            }
+    
+        }
+        
+        @media (max-width: 480px) {
+            .post-footer-item {
+                min-height: 60px;
+                padding: 0.5rem 0.3rem;
+            }
+
+            .footer-text {
+                font-size: 0.7rem;
+            }
+        
+        .post-footer-item:not(:last-child)::after {
+            height: 45%;
+        }
+
+         }
+
